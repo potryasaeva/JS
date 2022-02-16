@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*Реализовать основные 4 арифметические операции (+, -, /, *) 
+        в виде функций с двумя параметрами. Т.е. например, 
+        функция для сложения должна принимать два числа, складывать их и возвращать результат.
+        Обязательно использовать оператор return.*/
+        
+        function addition(a, b) {
+          let c = a + b;
+        return c;
+        }
+
+        function subtraction(a, b) {
+            let c = a - b;
+        return c;
+        }
+
+        function multiplication(a, b) {
+           let c = a * b;
+        return c;
+        }
+
+        function division(a, b) {
+           let c = a / b;
+        return c;
+        }
+    
+        /*Реализовать функцию с тремя параметрами: function mathOperation(arg1, arg2, operation), 
+        где arg1, arg2 – значения аргументов, operation – строка с названием операции. 
+        В зависимости от переданного значения операции (использовать switch) 
+        выполнить одну из арифметических операций (использовать функции из задания 4) и вернуть полученное значение.*/
+        
+        function mathOperation(arg1, arg2, operation){
+            let result;
+            switch(operation) {
+                case '+': result = addition(arg1,arg2);
+                    break;
+                case '-': result = subtraction(arg1,arg2);
+                    break;
+                case '*': result = multiplication(arg1,arg2);
+                    break;
+                case '/': result = division(arg1,arg2);
+                    break;
+                default:
+                    alert( "Couldn't fined " + operation + " operator!" );
+            }
+            alert(arg1 + operation + arg2 + " = " + result);
+        }
+        let arg1 = prompt('Enter first number');
+        let operation = prompt('Enter operation');
+        let arg2 = prompt('Enter second number');
+        mathOperation(arg1, arg2, operation);
+
+    </script>
+</body>
+</html>
