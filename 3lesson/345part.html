@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*Перед вами находится массив с продуктами, 
+        сегодня распродажа и вам нужно на каждый товар применить скидку 15%, 
+        можете использовать метод forEach https://mzl.la/1AOMMWX :
+        */
+        const products = [{id: 3, price: 200,},
+                          {id: 4, price: 900,},
+                          {id: 1, price: 1000,},];
+        products.forEach(element => element.price *= 0.85);
+        products.forEach(element => console.log(element) );
+
+        /*1. Получить все товары, у которых есть фотографии, 
+        можете использовать метод filter https://mzl.la/2qROQkT 
+        2. Отсортируйте товары по цене (от низкой цены к высокой).*/
+
+        const productsNew = [{id: 3, price: 127, photos: ["1.jpg", "2.jpg",]},
+                          {id: 5, price: 499, photos: [] },
+                          {id: 10, price: 26, photos: ["3.jpg"]},
+                          {id: 8, price: 78, },];
+
+        function filterProducts(products, attr) {
+            return products.filter(element => attr in element && element.photos.length > 0);
+        }
+        console.log(filterProducts(productsNew, 'photos'));
+        console.log(productsNew.sort((min, max) => min.price - max.price));
+
+        /*Нарисовать горку с помощью console.log (используя цикл for), как показано на рисунке, только у вашей горки должно быть 20 рядов, а не 5:*/
+        var str="";
+        for (var i = 0; i <= 20; i++) {
+            console.log(str += "x");
+        }
+
+    </script>
+</body>
+</html>
