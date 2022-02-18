@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function GetNumericObject(number) {
+            var numericObject = {};
+            if ((Number.isInteger(number) || number == 0) && Math.sign(number) !== -1){  //целое положительное
+                if (number >= 0 && number <= 999){
+                    let array = (""+number).split("").map(Number);
+                    numericObject.units = array[0];
+                    numericObject.tens = 0;
+                    numericObject.hundreds = 0;
+                    switch(array.length) {
+                    case 2: numericObject.tens = array[1];
+                    break;
+                    case 3: numericObject.tens = array[2];
+                    break;
+                    default: break;
+                    } 
+                    numericObject.units = array[0];
+                    numericObject.tens = array[1];
+                    numericObject.hundreds = array[2];
+                }
+                else console.log("Entered number not from interval [0;999]");   
+            } 
+            else console.log("Entered number not positive integer");
+            return numericObject;
+        }
+        let numberForConvert = prompt('Enter number from interval [0;999]');
+        console.log(GetNumericObject(numberForConvert));
+    </script>
+</body>
+</html>
